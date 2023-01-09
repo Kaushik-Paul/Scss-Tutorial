@@ -1,3 +1,20 @@
-/* line 1, scss/main.scss */
-body {
-  background-color: cyan; }
+.nav {
+  background-color: orange; }
+  .nav ul li {
+    list-style: none; }
+  .nav a {
+    text-decoration: none;
+    font-size: 30px;
+    color: green; }
+    .nav a:hover {
+      color: royalblue; }
+
+.banner h1 {
+  font-size: 40px;
+  color: red;
+  text-align: center; }
+
+.footer h3 {
+  font-size: 30px;
+  color: green;
+  text-align: center; }
