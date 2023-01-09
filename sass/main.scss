@@ -1,3 +1,7 @@
+// Import
+@import "_mixins";
+@import "var";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,23 +10,6 @@
 
 html {
     font-size: 62.5%;
-}
-
-// Variables
-$bg-color: #d9ecda;
-
-// Mixins
-@mixin flexrob {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-// Mixin with parameter
-@mixin commoncode($letter-spacing-value) { 
-    letter-spacing: $letter-spacing-value;
-    text-transform: capitalize;
 }
 
 .main-header { 
