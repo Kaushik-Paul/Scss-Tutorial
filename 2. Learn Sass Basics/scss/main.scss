@@ -1,5 +1,5 @@
 $color-primary: orange;
-$color-secondary: green;
+$color-secondary: grey;
 $color-tertiary: royalblue;
 
 $font-lg: 40px;
@@ -25,15 +25,30 @@ $font-sm: 20px;
      }
 }
 
-.banner h1 {
-    $color-secondary: red;
-    font-size: $font-lg;
-    color: $color-secondary;
+// Mixin
+@mixin headingStyles($fontSize, $colorName: $color-secondary) {
+    font-size: $fontSize;
+    color: $colorName;
     text-align: center;
 }
 
+// Transition mixin
+@mixin transition($param...) {
+    transition: $param;
+}
+
+.banner h1 {
+    // Local scope
+    $color-secondary: red;
+    @include headingStyles($font-lg, $color-secondary);
+}
+
 .footer h3 {
-    font-size: $font-md;
-    color: $color-secondary;
-    text-align: center;
+    @include headingStyles($font-md);
+    @include transition(color .5s, background-color 1s);
+
+    &:hover {
+        color: $color-tertiary;
+        background-color: $color-primary;
+    }
 }
