@@ -11,13 +11,26 @@ html {
 // Variables
 $bg-color: #d9ecda;
 
-.main-header { 
-    width: 100vw;
-    height: 100vh;
+// Mixins
+@mixin flexrob {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+// Mixin with parameter
+@mixin commoncode($letter-spacing-value) { 
+    letter-spacing: $letter-spacing-value;
+    text-transform: capitalize;
+}
+
+.main-header { 
+
+    @include flexrob;
+
+    width: 100vw;
+    height: 100vh;
     background: $bg-color; 
 
     // Nesting
@@ -26,9 +39,15 @@ $bg-color: #d9ecda;
         // Operations
         font-size: 5rem + 2rem;
 
+        @include commoncode(1.5rem);
+
         // Inheritance
         &:hover { 
             color: rgb(255, 246, 238);
+        }
+
+        &::after {
+            content:"Tutorial";
         }
     }
 
@@ -36,6 +55,8 @@ $bg-color: #d9ecda;
         color: rgb(0, 221, 255);
         // Operations
         font-size: 5rem + 2rem;
+
+        @include commoncode(.3rem);
 
         &:hover { 
             color: rgb(60, 203, 52);
