@@ -7,7 +7,9 @@ $font-md: 30px;
 $font-sm: 20px;
 
 .nav {
-    background-color: $color-primary;
+    // build in functions
+    background-color:
+            lighten($color-primary, 20%);
 
     ul {
         li {
@@ -37,10 +39,35 @@ $font-sm: 20px;
     transition: $param;
 }
 
+// Extend example
+//.heading {
+//    color: $color-primary;
+//    background-color: $color-secondary;
+//    font-size: $font-lg;
+//    text-align: center;
+//}
+
+// Placeholder selectors
+%heading {
+    color: $color-primary;
+    background-color: $color-secondary;
+    font-size: $font-lg;
+    text-align: center;
+}
+
+// Function example
+@function changeFontSize($fontSize) {
+    @return $fontSize * 2;
+}
+
 .banner h1 {
     // Local scope
-    $color-secondary: red;
-    @include headingStyles($font-lg, $color-secondary);
+    //$color-secondary: red;
+    //@include headingStyles($font-lg, $color-secondary);
+
+    // using extend
+    //@extend .heading;
+    @extend %heading;
 }
 
 .footer h3 {
@@ -51,4 +78,9 @@ $font-sm: 20px;
         color: $color-tertiary;
         background-color: $color-primary;
     }
+}
+
+// Demonstrate function
+.banner p {
+    font-size: changeFontSize($font-sm);
 }
