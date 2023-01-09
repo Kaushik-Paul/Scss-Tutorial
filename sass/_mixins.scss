@@ -1,0 +1,13 @@
+// Mixins
+@mixin flexrob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+// Mixin with parameter
+@mixin commoncode($letter-spacing-value) { 
+    letter-spacing: $letter-spacing-value;
+    text-transform: capitalize;
+}
