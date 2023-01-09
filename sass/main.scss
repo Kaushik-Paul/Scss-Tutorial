@@ -8,16 +8,38 @@ html {
     font-size: 62.5%;
 }
 
+// Variables
+$bg-color: #d9ecda;
+
 .main-header { 
     width: 100vw;
     height: 100vh;
-    display: grid;
-    place-items: center;
-    background: #ecd9dd; 
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: $bg-color; 
 
-h1 {
-    color: red;
-    font-size: 5rem + 5rem;
+    // Nesting
+    h1 {
+        color: rgb(0, 255, 187);
+        // Operations
+        font-size: 5rem + 2rem;
+
+        // Inheritance
+        &:hover { 
+            color: rgb(255, 246, 238);
+        }
+    }
+
+    p {
+        color: rgb(0, 221, 255);
+        // Operations
+        font-size: 5rem + 2rem;
+
+        &:hover { 
+            color: rgb(60, 203, 52);
+        }
+    }
 }
 

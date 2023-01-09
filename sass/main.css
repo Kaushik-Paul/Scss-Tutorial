@@ -11,12 +11,23 @@ html {
 .main-header {
   width: 100vw;
   height: 100vh;
-  display: grid;
-  place-items: center;
-  background: #ecd9dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #d9ecda;
 }
-
-h1 {
-  color: red;
-  font-size: 10rem;
+.main-header h1 {
+  color: rgb(0, 255, 187);
+  font-size: 7rem;
+}
+.main-header h1:hover {
+  color: rgb(255, 246, 238);
+}
+.main-header p {
+  color: rgb(0, 221, 255);
+  font-size: 7rem;
+}
+.main-header p:hover {
+  color: rgb(60, 203, 52);
 }/*# sourceMappingURL=main.css.map */
