@@ -1,0 +1,128 @@
+// Numbers
+.numbers {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 20px; // rem, em, %
+}
+
+// Strings
+.strings {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Colors
+.colors {
+  color: red;
+  background-color: #ff0000;
+  border-color: rgb(255, 0, 0); // rgba(255, 0, 0, .5)
+  outline-color: hsl(0, 100%, 50%);
+}
+
+// Lists
+.lists {
+  margin: 10px 15px 5px 20px;
+  font-family: 'Raleway', 'Dosis', 'Lato', serif;
+  border: 1px solid red;
+}
+
+// Maps
+$colors: (
+        "primary": red,
+        2: green,
+        3: blue,
+        secondary: cyan
+);
+
+h1 {
+    color: map-get($colors, primary);
+    background-color: map-get($colors, 2);
+}
+
+.check-map {
+    border-color: map-get($colors, secondary);
+}
+
+
+// Sass interpolation
+$b: "border";
+$c: "color";
+
+h2 {
+  box-sizing: #{$b}-box;
+  #{$b}: 1px solid red;
+  #{$c}: green;
+  background-#{$c}: blue;
+}
+
+
+// Sass Loops
+$fontColors: (
+        1: red,
+        2:green,
+        3:blue,
+        4:orange,
+);
+
+// For loop
+@for $i from 1 to 5 {
+  .paragraph-#{$i} {
+    background-color: map-get($fontColors, $i);
+  }
+}
+
+$colorsList: red green blue orange;
+
+// Each loop
+@each $color in $colorsList {
+  .paragraph-#{$color} {
+    background-color: $color
+  }
+}
+
+// If Directive
+
+@mixin headingSize($size: small) {
+  @if($size == large) {
+    font-size: 50px;
+  } @else if($size == medium) {
+    font-size: 35px;
+  } @else {
+    font-size: 10px;
+  }
+}
+
+h3 {
+  @include headingSize(large);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
